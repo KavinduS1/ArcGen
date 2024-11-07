@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <button id="sidebarToggle" class="sidebar-toggle">
+            <img src="https://img.icons8.com/fluency-systems-filled/48/ff4433/show-left-side-panel.png" alt="Toggle Sidebar" class="toggle-icon">
+        </button>
+        
+        <div class="sidebar" id="historySidebar">
+            <div class="sidebar-header">
+                <h2>History</h2>
+                <button class="close-sidebar" id="closeSidebar">
+                    <img src="close.svg" alt="Close" class="close-icon">
+                </button>
+            </div>
+            <div class="history-list" id="historyList">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="container">
+                <h1>Article Generator</h1>
+                
+                <div class="model-selector">
+                    <label for="modelSelect">Model:</label>
+                    <select id="modelSelect" class="model-select">
+                        <option value="gemini-1.5-pro-002">gemini-1.5-pro-002 (Default)</option>
+                        <option value="gemini-1.5-flash-002">gemini-1.5-flash-002</option>
+                        <option value="gemini-1.5-pro">gemini-1.5-pro</option>
+                        <option value="gemini-1.5-pro-001">gemini-1.5-pro-001</option>
+                        <option value="gemini-1.5-flash">gemini-1.5-flash</option>
+                        <option value="gemini-1.5-flash-001">gemini-1.5-flash-001</option>
+                        <option value="gemini-1.5-flash-8b">gemini-1.5-flash-8b</option>
+                        <option value="gemini-1.5-flash-8b-exp-0924">gemini-1.5-flash-8b-exp-0924</option>
+                    </select>
+                </div>
+
+                <div class="input-section">
+                    <input type="text" id="topicInput" placeholder="Enter your topic">
+                    <button onclick="generateArticle()">Generate Article</button>
+                </div>
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="loading" id="loading">Generating article...</div>
+                </div>
+                <div class="article-container" id="articleOutput"></div>
+                <div class="copy-button-container" id="copyButtonContainer" style="display: none;">
+                    <button onclick="copyToClipboard()" class="copy-btn">
+                        Copy to Clipboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
